@@ -151,10 +151,6 @@ button#roll {
   &:active {
     transform: scale(0.95);
   }
-
-  &:focus {
-    outline: 0.25rem solid #b5cffa;
-  }
 }
 
 @media (max-height: 429px), (max-width: 429px) {
