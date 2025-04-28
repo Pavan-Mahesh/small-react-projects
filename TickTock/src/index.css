@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  user-select: none;
+  font-family: monospace;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+

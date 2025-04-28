@@ -1,0 +1,34 @@
+.stopwatch-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 26px 0px;
+}
+
+.stopwatch-unit .value {
+  width: 75px;
+
+  font-size: 60px;
+  text-align: center;
+  color: black;
+  background-color: #edf2fa;
+  border: 2px solid #d3e3fd;
+  border-radius: 6px;
+  padding: 0;
+}
+
+.non-editable {
+  position: relative;
+  user-select: none;
+}
+
+.non-editable::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
