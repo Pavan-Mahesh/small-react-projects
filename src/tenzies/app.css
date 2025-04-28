@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Karla", sans-serif;
+
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+html,
+body {
+  width: 100dvw;
+  height: 100dvh;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0b2434;
+}
+
+button {
+  cursor: pointer;
+}
+
+/*
+  the elements with sr-only are not visible to the screen, 
+  but are read by the screen readers
+*/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+#game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: #f5f5f5;
+  border-radius: 0.8rem;
+  padding: 2.5rem;
+}
+
+#game-container > * {
+  flex-shrink: 0;
+}
+
+#game-header {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+#dice-container {
+  width: max-content;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 1.25rem;
+
+  margin-bottom: 2.25rem;
+}
+
+button.die {
+  width: 3.25rem;
+  height: 3.25rem;
+
+  color: white;
+  font-size: 1.75rem;
+  font-weight: bold;
+
+  border: none;
+  border-radius: 0.5rem;
+
+  background-color: #000000;
+  box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.15);
+
+  animation-name: die-roll;
+  animation-timing-function: ease;
+
+  transition: transform 0.2s ease;
+}
+
+button.die img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center;
+}
+
+button.die[data-roll="true"] {
+  /* 
+    - so when the roll button is clicked the unheld dice are rolled
+    - if the held dice are clicked and set free this makes sure that
+      the animation run only for 1 iteration then even increasing the
+      duration does make the animation trigger
+  */
+  animation-duration: 0.6s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+#feedback {
+  height: 1lh;
+
+  vertical-align: middle;
+  font-weight: bold;
+  white-space: pre-line;
+  text-align: center;
+
+  margin-bottom: 1.25rem;
+}
+
+button#roll {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+
+  background-color: #5035ff;
+
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.8rem 2.4rem;
+
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:focus {
+    outline: 0.25rem solid #b5cffa;
+  }
+}
+
+@media (max-height: 429px), (max-width: 429px) {
+  body {
+    background-color: #f5f5f5;
+  }
+
+  #game-container {
+    width: 100vw;
+    border-radius: 0;
+    padding: 0;
+  }
+}
+
+@media (max-height: 350px) {
+  body {
+    align-items: start;
+  }
+
+  #game-container {
+    padding: 0.25rem;
+  }
+}
+
+/* animations */
+
+@keyframes die-roll {
+  0% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(380deg);
+  }
+  80% {
+    transform: rotate(350deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
