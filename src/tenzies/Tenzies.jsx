@@ -4,7 +4,7 @@ import Confetti from "react-confetti";
 
 import Die from "./components/Die.jsx";
 
-import "./app.css";
+import "./tenzies.css";
 
 export default function App() {
   const INVALID_MOVE = "❗Release them all to pick a new number!";
