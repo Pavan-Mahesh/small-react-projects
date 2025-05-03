@@ -4,7 +4,7 @@ import Confetti from "react-confetti";
 
 import Die from "./components/Die.jsx";
 
-import "./tenzies.css";
+import TenziesCss from "./tenzies.module.css";
 
 export default function App() {
   const INVALID_MOVE = "❗Release them all to pick a new number!";
@@ -129,31 +129,33 @@ export default function App() {
   ));
 
   return (
-    <main id="game-container">
-      {gameWon && <Confetti width={width - 1} height={height - 1} />}
+    <div className={TenziesCss["tenzies-body"]}>
+      <main className={TenziesCss["game-container"]}>
+        {gameWon && <Confetti width={width - 1} height={height - 1} />}
 
-      <div className="sr-only" aria-live="polite">
-        {gameWon && (
-          <p>Congratulations! You Won! Press "New Game" to start again.</p>
-        )}
-      </div>
+        <div className={TenziesCss["sr-only"]} aria-live="polite">
+          {gameWon && (
+            <p>Congratulations! You Won! Press "New Game" to start again.</p>
+          )}
+        </div>
 
-      <div id="game-header">
-        <h1 className="title">Tenzies</h1>
-        <p className="instructions">
-          Roll until all dice are the same.
-          <br />
-          Click a die to hold — click again to release.
-        </p>
-      </div>
+        <div className={TenziesCss["game-header"]}>
+          <h1 className="title">Tenzies</h1>
+          <p className="instructions">
+            Roll until all dice are the same.
+            <br />
+            Click a die to hold — click again to release.
+          </p>
+        </div>
 
-      <div id="dice-container">{diceElements}</div>
+        <div className={TenziesCss["dice-container"]}>{diceElements}</div>
 
-      <p id="feedback">{feedback}</p>
+        <p className={TenziesCss["feedback"]}>{feedback}</p>
 
-      <button ref={btnRef} id="roll" onClick={rollDice}>
-        {gameWon ? "New game" : "Roll"}
-      </button>
-    </main>
+        <button ref={btnRef} className={TenziesCss["roll"]} onClick={rollDice}>
+          {gameWon ? "New game" : "Roll"}
+        </button>
+      </main>
+    </div>
   );
 }

@@ -1,5 +1,7 @@
 import React from "react";
 
+import TenziesCss from "../tenzies.module.css";
+
 export default function Die(props) {
   const styles = {
     filter: `brightness(${props.isHeld ? 0.75 : 1})`,
@@ -8,7 +10,7 @@ export default function Die(props) {
 
   return (
     <button
-      className="die"
+      className={TenziesCss["die"]}
       style={styles}
       key={props.rollsCount}
       data-roll={!props.isHeld}

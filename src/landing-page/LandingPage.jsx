@@ -1,7 +1,6 @@
 import ProjectCard from "./components/ProjectCard.jsx";
 
-// import "./landingPage.css";
-import "./landingPage.css";
+import LandingPageCss from "./landingPage.module.css";
 
 export default function LandingPage() {
   const projects = [
@@ -13,24 +12,29 @@ export default function LandingPage() {
   ];
 
   return (
-    <main id="main-container">
-      <section id="greetings">
-        <h1>
-          Hi there!
-          <br /> <span id="my-name">I'm Pavan Mahesh.</span>
-        </h1>
-        <p>
-          Here are some cool React projects I've built.
-          <br /> Hope you enjoy exploring them!
-        </p>
-      </section>
+    <div className={LandingPageCss["landing-page-body"]}>
+      <main className={LandingPageCss["container"]}>
+        <section className={LandingPageCss["greetings"]}>
+          <h1>
+            Hi there!
+            <br /> <span id="my-name">I'm Pavan Mahesh.</span>
+          </h1>
+          <p>
+            Here are some cool React projects I've built.
+            <br /> Hope you enjoy exploring them!
+          </p>
+        </section>
 
-      <section id="projects">
-        <ProjectCard
-          name={projects[0].name}
-          description={projects[0].description}
-        />
-      </section>
-    </main>
+        <section className={LandingPageCss["projects"]}>
+          {projects.map((project, idx) => (
+            <ProjectCard
+              key={idx}
+              name={project.name}
+              description={project.description}
+            />
+          ))}
+        </section>
+      </main>
+    </div>
   );
 }
