@@ -1,5 +1,6 @@
 {
   "name": "small-react-projects",
+  "homepage": "https://pavan-mahesh.github.io/small-react-projects/",
   "private": true,
   "description": "Some interesting and fun React projects I built while learning.",
   "version": "0.0.0",
@@ -11,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "gh-pages": "^6.3.0",
     "nanoid": "^5.1.5",
     "react": "^19.0.0",
     "react-confetti": "^6.4.0",
