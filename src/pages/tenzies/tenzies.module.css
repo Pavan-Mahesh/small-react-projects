@@ -73,8 +73,6 @@ button.die {
 
   animation-name: die-roll;
   animation-timing-function: ease;
-
-  transition: transform 0.2s ease;
 }
 
 button.die img {
