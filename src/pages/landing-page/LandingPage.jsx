@@ -1,4 +1,4 @@
-import ProjectCard from "./components/ProjectCard.jsx";
+import ProjectCard from "./ProjectCard.jsx";
 
 import LandingPageCss from "./landingPage.module.css";
 

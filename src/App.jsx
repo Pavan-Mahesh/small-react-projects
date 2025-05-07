@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router";
 
-import Tenzies from "./tenzies/Tenzies.jsx";
-import LandingPage from "./landing-page/LandingPage.jsx";
+import LandingPage from "./pages/landing-page/LandingPage.jsx";
+import Tenzies from "./pages/tenzies/Tenzies.jsx";
 
 export default function App() {
   return (

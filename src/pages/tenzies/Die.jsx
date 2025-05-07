@@ -1,6 +1,6 @@
 import React from "react";
 
-import TenziesCss from "../tenzies.module.css";
+import TenziesCss from "./tenzies.module.css";
 
 export default function Die(props) {
   const styles = {
@@ -22,7 +22,7 @@ export default function Die(props) {
     >
       {/* {props.value} */}
       <img
-        src={`/src/tenzies/assets/die-${props.value}.svg`}
+        src={`./src/assets/tenzies/die-${props.value}.svg`}
         alt={props.value}
       />
     </button>

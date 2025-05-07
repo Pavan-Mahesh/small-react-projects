@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-import LandingPageCss from "../landingPage.module.css";
+import LandingPageCss from "./landingPage.module.css";
 
 export default function ProjectInfo(props) {
   return (
