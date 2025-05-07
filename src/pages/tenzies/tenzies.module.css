@@ -92,7 +92,7 @@ button.die[data-roll="true"] {
       the animation run only for 1 iteration then even increasing the
       duration does make the animation trigger
   */
-  animation-duration: 0.6s;
+  animation-duration: 0.5s;
 
   &:hover {
     transform: scale(1.05);
