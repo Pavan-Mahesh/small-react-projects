@@ -22,7 +22,7 @@ export default function Die(props) {
     >
       {/* {props.value} */}
       <img
-        src={`./src/assets/tenzies/die-${props.value}.svg`}
+        src={`src/assets/tenzies/die-${props.value}.svg`}
         alt={props.value}
       />
     </button>
