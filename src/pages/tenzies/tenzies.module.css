@@ -73,6 +73,9 @@ button.die {
 
   animation-name: die-roll;
   animation-timing-function: ease;
+
+  transition: transform 0.2s ease;
+  will-change: transform;
 }
 
 button.die img {
@@ -159,13 +162,13 @@ button.roll {
 
 @keyframes die-roll {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(180deg);
   }
   60% {
-    transform: rotate(380deg);
+    transform: rotate(370deg);
   }
   80% {
-    transform: rotate(350deg);
+    transform: rotate(355deg);
   }
   100% {
     transform: rotate(360deg);
