@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Karla", sans-serif;
+  font-family: inherit;
 
   user-select: none;
   -webkit-user-select: none;
@@ -10,6 +10,11 @@
   -ms-user-select: none;
 
   -webkit-tap-highlight-color: transparent !important;
+}
+
+:root {
+  --comic-relief: "comic relief", sans-serif;
+  --karla: "karla", sans-serif;
 }
 
 html,
