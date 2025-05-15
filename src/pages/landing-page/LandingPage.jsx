@@ -6,8 +6,15 @@ export default function LandingPage() {
   const projects = [
     {
       name: "Tenzies",
+      url: "/tenzies",
       description:
         "A fun dice matching game made with React and smooth CSS animations.",
+    },
+    {
+      name: "Assembly: Endgame",
+      url: "/endgame",
+      description:
+        "A hangman-inspired game where each wrong guess erases a language — lose, and you're coding in Assembly!",
     },
   ];
 
@@ -29,6 +36,7 @@ export default function LandingPage() {
           {projects.map((project, idx) => (
             <ProjectCard
               key={idx}
+              url={project.url}
               name={project.name}
               description={project.description}
             />

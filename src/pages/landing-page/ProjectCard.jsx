@@ -4,12 +4,17 @@ import LandingPageCss from "./landingPage.module.css";
 
 export default function ProjectInfo(props) {
   return (
-    <Link to={"/" + props.name.toLowerCase()}>
+    <Link to={props.url}>
       <article className={LandingPageCss["project-card"]}>
-        <h3 className={LandingPageCss["name"]}>{props.name}</h3>
-        <span className={LandingPageCss["description"]}>
+        <h3 className={LandingPageCss["name"]} title={props.name}>
+          {props.name}
+        </h3>
+        <div
+          className={LandingPageCss["description"]}
+          title={props.description}
+        >
           {props.description}
-        </span>
+        </div>
       </article>
     </Link>
   );
